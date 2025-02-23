@@ -1,0 +1,27 @@
+1.python code to add 2 nums
+
+num1 = input('Enter first number: ')
+num2 = input('Enter second number: ')
+
+sum = float(num1) + float(num2)
+
+print('The sum of {0} and {1} is {2}'.format(num1, num2, sum))
+
+2.Jav code to check num is +ve or -ve
+
+public class PositiveNegative {
+
+    public static void main(String[] args) {
+
+        double number = 12.3;
+
+        if (number < 0.0)
+            System.out.println(number + " is a negative number.");
+
+        else if ( number > 0.0)
+            System.out.println(number + " is a positive number.");
+
+        else
+            System.out.println(number + " is 0.");
+    }
+}
