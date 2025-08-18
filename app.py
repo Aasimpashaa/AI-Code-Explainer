@@ -1,7 +1,14 @@
+import os
 import streamlit as st
 from groq import Groq
 
-client = Groq(api_key="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")
+# Safe key
+api_key = st.secrets.get("GROQ_API_KEY") or os.getenv("GROQ_API_KEY")
+if not api_key:
+    st.error("GROQ_API_KEY is not set. Add it in Streamlit Secrets (cloud) or as an environment variable / .streamlit/secrets.toml (local).")
+    st.stop()
+
+client = Groq(api_key=api_key)
 
 st.title("Hey I Am Your AI Explaination Tool ClariCode")
 st.write("Provide A Code Snippet,And I Will Explain It With Working Details And Use Cases.")
@@ -35,4 +42,5 @@ if st.button("Get Explanation"):
         st.subheader("Code Explanation")
         st.write(explanation)
     else:
+
         st.warning("Please enter some code before clicking the button.")
