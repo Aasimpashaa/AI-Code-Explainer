@@ -3,7 +3,7 @@ import streamlit as st
 from groq import Groq
 
 # Initialize Groq client
-client = Groq(api_key="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")
+client = Groq(api_key="Insert Your GROQ_API_KEY")
 
 st.title("ClariCode - Your AI Code Explanation Tool")
 st.write("Paste your code snippet below, and I'll explain how it works, what language it uses, and potential use cases.")
@@ -62,3 +62,4 @@ if st.button("Get Explanation"):
                     st.error(f"An error occurred: {e}")
     else:
         st.warning("⚠️ Please enter a code snippet before clicking the button.")
+
